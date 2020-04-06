@@ -1,6 +1,6 @@
 <?php
 
-require_once "public/config/uploader.php";
+require_once "admin/public/config/uploader.php";
 require_once "view/layout/header.php";
 
 $controller = @$_GET['c'] ? $_GET['c'] : 'index';
