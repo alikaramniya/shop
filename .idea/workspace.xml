@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c337f21-8330-4850-9503-74cb4bf78bf0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1a9LFFUOhVVRrwsQrkOWT1hgRmd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\shop\@@@" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c337f21-8330-4850-9503-74cb4bf78bf0" name="Default Changelist" comment="" />
+      <created>1586142759631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586142759631</updated>
+      <workItem from="1586142764570" duration="2200000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="514" y="181" key="NewPhpClassDialog" timestamp="1586143287605">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="514" y="181" key="NewPhpClassDialog/0.0.1366.768@0.0.1366.768" timestamp="1586143287605" />
+    <state x="518" y="302" key="NewPhpFileDialog" timestamp="1586144495696">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="518" y="302" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1586144495696" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1586142945602">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1586142945602" />
+  </component>
+</project>
