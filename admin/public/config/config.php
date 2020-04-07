@@ -17,22 +17,22 @@ class Config
 
     private function connect()
     {
-        try {
-            $this->user = 'root';
-            $this->pass = '';
-            $this->db = 'shop';
-            $this->pdo = new PDO("mysql:host=localhost;dbname={$this->db};charset=utf8", $this->user, $this->pass);
-        } catch (PDOException $e) {
-            exit('Error : ' . $e->getMessage());
-        }
+       try {
+           $this->user = 'root';
+           $this->pass = '';
+           $this->db = 'shop';
+           $this->pdo = new PDO("mysql:host=localhost;dbname={$this->db};charset=utf8", $this->user, $this->pass);
+       } catch (PDOException $e) {
+           exit('Error ' . $e->getMessage());
+       }
     }
 
-    private function setTbl($tbl)
+    protected function setTbl($tbl)
     {
         $this->tbl = $tbl;
     }
 
-    private function selectData($field)
+    protected function selectData($field)
     {
         if (is_array($field)) {
             $fields = implode(",", $field);
@@ -45,7 +45,7 @@ class Config
         return $row;
     }
 
-    private function insertData($data)
+    protected function insertData($data)
     {
         if (is_array($data)) {
             $field = array_keys($data);
@@ -70,7 +70,7 @@ class Config
         }
     }
 
-    private function updateData($data, $id)
+    protected function updateData($data, $id)
     {
         if (is_array($data)) {
             $field = array_keys($data);
@@ -98,10 +98,10 @@ class Config
         }
     }
 
-    private function showData($field, $val)
+    protected function showData($field, $val)
     {
         $sql = $this->pdo->prepare("select * from {$this->tbl} where $field=:val");
-        $type = gettype($val);
+        $type  = gettype($val);
         switch ($type) {
             case 'string':
                 $sql->bindParam(":val", $val);
@@ -118,14 +118,14 @@ class Config
         return $row;
     }
 
-    private function deleteData($id)
+    protected function deleteData($id)
     {
         $sql = $this->pdo->prepare("delete from {$this->tbl} where id=:id");
         $sql->bindParam(":id", $id, PDO::PARAM_INT);
         $sql->execute();
     }
 
-    private function likeData($field, $val, $sort)
+    protected function likeData($field, $val, $sort)
     {
         if ($sort == true) {
             $sql = $this->pdo->prepare("select * from {$this->tbl} where $field like '%$val%' order by sort asc");
@@ -137,7 +137,7 @@ class Config
         return $row;
     }
 
-    private function extraSql($str)
+    protected function extraSql($str)
     {
         $sql = $this->pdo->prepare("{$str}");
         return $sql;

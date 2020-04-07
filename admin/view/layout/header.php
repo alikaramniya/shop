@@ -140,7 +140,7 @@
                                     <span class="photo">
                                         <img alt="avatar" src="img/avatar-mini.jpg"></span>
                                 <span class="subject">
-                                        <span class="from">سجاد باقرزاده</span>
+                                        <span class="from"><?php echo $_SESSION['name']; ?></span>
                                         <span class="time">همین حالا</span>
                                     </span>
                                 <span class="message">سلام،متن پیام نمایشی جهت تست
@@ -259,8 +259,8 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="img/avatar1_small.jpg">
-                        <span class="username">سجاد باقرزاده</span>
+                        <img alt="" src="public/img/admin/ali.jpg" width="50" height="40"">
+                        <span class="username"><?php echo $_SESSION['name']; ?></span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
@@ -268,7 +268,7 @@
                         <li><a href="#"><i class=" icon-suitcase"></i>پروفایل</a></li>
                         <li><a href="#"><i class="icon-cog"></i>تنظیمات</a></li>
                         <li><a href="#"><i class="icon-bell-alt"></i>اعلام ها</a></li>
-                        <li><a href="login.html"><i class="icon-key"></i>خروج</a></li>
+                        <li><a href="index.php?c=user&a=logout&logout=ok"><i class="icon-key"></i>خروج</a></li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->

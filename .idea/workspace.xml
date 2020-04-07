@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7c337f21-8330-4850-9503-74cb4bf78bf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/@@@/Panel/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/@@@/Panel/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/controller/Cuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Cuser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/index/Vindex.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/index/Vindex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/layout/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/Muser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Muser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/public/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/user/Vlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/user/Vlogin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,47 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="user" />
+                    <option name="lastUsedInstant" value="1586233599" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1586233598" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectId" id="1a9LFFUOhVVRrwsQrkOWT1hgRmd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -36,7 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/public/css/default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -61,7 +102,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586142759631</updated>
-      <workItem from="1586142764570" duration="10150000" />
+      <workItem from="1586142764570" duration="17093000" />
+      <workItem from="1586200105872" duration="2739000" />
+      <workItem from="1586229261314" duration="15537000" />
+      <workItem from="1586273672122" duration="5072000" />
     </task>
     <servers />
   </component>
@@ -69,17 +113,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="514" y="181" key="NewPhpClassDialog" timestamp="1586147589545">
+    <state x="182" y="50" width="816" height="626" key="#Notifications" timestamp="1586274143470">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="514" y="181" key="NewPhpClassDialog/0.0.1366.768@0.0.1366.768" timestamp="1586147589545" />
-    <state x="518" y="302" key="NewPhpFileDialog" timestamp="1586159063601">
+    <state x="182" y="50" width="816" height="626" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1586274143470" />
+    <state x="275" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586230496126">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="518" y="302" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1586159063601" />
-    <state x="184" y="14" key="SettingsEditor" timestamp="1586142945602">
+    <state x="275" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1586230496126" />
+    <state x="514" y="181" key="NewPhpClassDialog" timestamp="1586233679866">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1586142945602" />
+    <state x="514" y="181" key="NewPhpClassDialog/0.0.1366.768@0.0.1366.768" timestamp="1586233679866" />
+    <state x="518" y="302" key="NewPhpFileDialog" timestamp="1586235751350">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="518" y="302" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1586235751350" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1586230347843">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1586230347843" />
+    <state x="339" y="167" key="run.anything.popup" timestamp="1586235662491">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="167" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1586235662491" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1586276747019">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1586276747019" />
   </component>
 </project>

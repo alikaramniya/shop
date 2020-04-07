@@ -1,11 +1,4 @@
-﻿<?php
-    include_once '../include/user_functions.php';
-    if(isset($_POST['btn'])){
-        $data=$_POST['frm'];
-        user_login($data);
-    }
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
