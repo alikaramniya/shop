@@ -1,10 +1,10 @@
 @font-face{
     font-family:"main";
-    src:url('../fonts/IranSanse.eot'); /*IE9*/
-    src:url('../fonts/IranSanse.eot?#iefix') format('embedded-opentype'),/*IE6-IE8*/
-        url('../fonts/IranSanse.woff') format('woff'),
-        url('../fonts/IranSanse.ttf') format('truetype'),
-        url('../fonts/IranSanse.svg') format('svg');    
+    src:url('../../fonts/admin/IranSanse.eot'); /*IE9*/
+    src:url('../../fonts/admin/IranSanse.eot?#iefix') format('embedded-opentype'),/*IE6-IE8*/
+        url('../../fonts/admin/IranSanse.woff') format('woff'),
+        url('../../fonts/admin/IranSanse.ttf') format('truetype'),
+        url('../../fonts/admin/IranSanse.svg') format('svg');    
 }
 
 body {
