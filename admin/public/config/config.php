@@ -71,7 +71,7 @@ class Config
             $field = array_keys($data);
             $fields = implode(',', $field);
             $vals = ':' . implode(',:', $field);
-            $sql = $this->pdo->prepare("insert into {$this->tbl}({$vals}) values ({$fields})");
+            $sql = $this->pdo->prepare("insert into {$this->tbl}({$fields}) values ({$vals})");
             foreach ($data as $key => $value) {
                 $type = gettype($value);
                 switch ($type) {
