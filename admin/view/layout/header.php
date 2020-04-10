@@ -255,8 +255,8 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="public/img/admin/avatar1_small.jpg">
-                            <span class="username">سجاد باقرزاده</span>
+                            <img alt="" src="public/img/admin/ali.jpg" width="40" height="40">
+                            <span class="username"><?php echo $_SESSION['name']; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -264,7 +264,7 @@
                             <li><a href="#"><i class=" icon-suitcase"></i>پروفایل</a></li>
                             <li><a href="#"><i class="icon-cog"></i>تنظیمات</a></li>
                             <li><a href="#"><i class="icon-bell-alt"></i>اعلام ها</a></li>
-                            <li><a href="login.html"><i class="icon-key"></i>خروج</a></li>
+                            <li><a href="index.php?c=user&a=logout&logout=ok"><i class="icon-key"></i>خروج</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -279,7 +279,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="index.html">
+                        <a class="" href="index.php">
                             <i class="icon-dashboard"></i>
                             <span>صفحه اصلی</span>
                         </a>

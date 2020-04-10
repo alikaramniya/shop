@@ -1,6 +1,9 @@
 <?php
 
-require_once "public/config/config.php";
+ob_start();
+require_once "public/config/uploader.php";
+if (!isset($_SESSION['name']))
+    header("Location: login.php?error=first");
 require_once "view/layout/header.php";
 
 $controller = @$_GET['c'] ? $_GET['c'] : 'index';
@@ -10,4 +13,5 @@ if (file_exists("controller/C$controller.php")) {
 }
 
 require_once "view/layout/footer.php";
+ob_end_flush();
 ?>
