@@ -10,12 +10,12 @@ class Config
     private string $pass;
     protected $pdo;
 
-    public function __construct()
+    public final function __construct()
     {
         $this->connect();
     }
 
-    private function connect()
+    private final function connect()
     {
         try {
             $this->user = 'phpmyadmin';
@@ -27,12 +27,12 @@ class Config
         }
     }
 
-    protected function setTbl($tbl)
+   protected final function setTbl($tbl)
     {
         $this->tbl = $tbl;
     }
 
-    protected function selectData($field)
+   protected final function selectData($field)
     {
         if (is_array($field)) {
             $fields = implode(', ', $field);
@@ -45,7 +45,7 @@ class Config
         return $row;
     }
 
-    protected function showData($field, $val)
+   protected final function showData($field, $val)
     {
         $sql = $this->pdo->prepare("select * from {$this->tbl} where $field=:val");
         $type = gettype($val);
@@ -65,7 +65,7 @@ class Config
         return $row;
     }
 
-    protected function insertData($data)
+   protected final function insertData($data)
     {
         if (is_array($data)) {
             $field = array_keys($data);
@@ -90,7 +90,7 @@ class Config
         }
     }
 
-    protected function updateData($data, $id)
+   protected final function updateData($data, $id)
     {
         if (is_array($data)) {
             $field = array_keys($data);
@@ -124,7 +124,7 @@ class Config
         }
     }
 
-    protected function chooseData($field, $sort)
+   protected final function chooseData($field, $sort)
     {
         if (is_array($field)) {
             $total = count($field);
@@ -146,7 +146,7 @@ class Config
         }
     }
 
-    protected function likeData($field, $val, $sort)
+   protected final function likeData($field, $val, $sort)
     {
         $sql = $this->pdo->prepare("select * from {$this->tbl} where $field like '%$val%'");
         if ($sort == true)
@@ -156,7 +156,7 @@ class Config
         return $row;
     }
 
-    protected function extraSql($str)
+   protected final function extraSql($str)
     {
         $sql = $this->pdo->prepare("{$str}");
         return $sql;
