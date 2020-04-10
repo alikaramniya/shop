@@ -291,7 +291,7 @@
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="index.php?c=procat&a=add">دسته بندی</a></li>
+                            <li><a class="" href="index.php?c=procat&a=add">افزودن دسته بندی جدید</a></li>
                             <li><a class="" href="index.php?c=procat&a=list">لیست دسته بندی</a></li>
                         </ul>
                     </li>
