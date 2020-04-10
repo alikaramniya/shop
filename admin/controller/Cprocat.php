@@ -14,10 +14,19 @@ switch ($action) {
         $total = count($listMainChid);
         break;
     case 'list':
-        
+        $listProcat = $procat->listProcat();
+        $total = count($listProcat);
+        if (isset($_GET['state'])) {
+            $id = $_GET['id'];
+            $data['status'] = '1';
+            if ($_GET['state'] == 'ok')
+                $data['status'] = '0';
+            $procat->updateProcat($data, $id);
+            header("Location:index.php?c=procat&a=list");
+        }
         break;
     case 'delete':
-
+        
         break;
     case 'edit':
 

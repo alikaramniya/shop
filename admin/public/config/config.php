@@ -106,12 +106,6 @@ class Config
                     case 'string':
                         $sql->bindParam(":$key", $data[$key]);
                         break;
-                    case 'string':
-                        $sql->bindParam(":$key", $data[$key]);
-                        break;
-                    case 'string':
-                        $sql->bindParam(":$key", $data[$key]);
-                        break;
                     case 'integer':
                         $sql->bindParam(":$key", $data[$key], PDO::PARAM_INT);
                         break;
