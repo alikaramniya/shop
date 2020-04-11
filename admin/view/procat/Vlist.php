@@ -49,12 +49,12 @@ if ($total > 0):
                 <td><?php echo $value->sort; ?></td>
                 <td>
                     <a href="index.php?c=procat&a=edit&id=<?php echo $value->id; ?>">
-                        <button class="btn btn-primary"><i class="icon-edit"></i></button>
+                        <button class="btn btn-primary btn-xs"><i class="icon-edit"></i></button>
                     </a>
                 </td>
                 <td>
                     <a href="index.php?c=procat&a=delete&id=<?php echo $value->id; ?>">
-                        <button class="btn btn-danger"><i class="icon-trash"></i></button>
+                        <button class="btn btn-danger btn-xs"><i class="icon-trash"></i></button>
                     </a>
                 </td>
             </tr>

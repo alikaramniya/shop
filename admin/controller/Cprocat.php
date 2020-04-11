@@ -31,7 +31,16 @@ switch ($action) {
         header("Location:index.php?c=procat&a=list");
         break;
     case 'edit':
-
+        $id = $_GET['id'];
+        $edit = $procat->showEdit($id);
+        if ($_POST) {
+            $data = $_POST['frm'];
+            $procat->updateProcat($data, $id);
+            header("location:index.php?c=procat&a=list");
+        }
+        //Select the main groups
+        $listMainChid = $procat->listMainChid(['1', '0']);
+        $total = count($listMainChid);
         break;
 }
 
