@@ -118,6 +118,13 @@ class Config
         }
     }
 
+    protected final function deleteData($id)
+    {
+        $sql = $this->pdo->prepare("delete from {$this->tbl} where id=:id");
+        $sql->bindParam(":id", $id, PDO::PARAM_INT);
+        $sql->execute();
+    }
+
    protected final function chooseData($field, $sort)
     {
         if (is_array($field)) {
