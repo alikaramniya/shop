@@ -37,6 +37,12 @@ class Procat extends Uploader
         $this->setTbl(self::tbl);
         $this->updateData($data, $id);
     }
+
+    public final function deleteProcat($id)
+    {
+        $this->setTbl(self::tbl);
+        $this->deleteData($id);
+    }
 }
 
 ?>

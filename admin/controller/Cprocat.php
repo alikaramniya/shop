@@ -26,7 +26,9 @@ switch ($action) {
         }
         break;
     case 'delete':
-        
+        $id = $_GET['id'];
+        $procat->deleteProcat($id);
+        header("Location:index.php?c=procat&a=list");
         break;
     case 'edit':
 
