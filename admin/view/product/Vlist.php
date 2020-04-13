@@ -1,6 +1,7 @@
 <section class="panel">
     <header class="panel-heading">
-    لیست دسته بندی محصولات    
+        Advanced Table
+    
     </header>
     <table class="table table-striped table-advance table-hover">
         <thead>

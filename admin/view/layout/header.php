@@ -20,6 +20,8 @@
     <link href="public/css/admin/style.css" rel="stylesheet">
     <link href="public/css/admin/style-responsive.css" rel="stylesheet" />
 
+    <!-- ckeditor -->
+    <script src="ckeditor/ckeditor.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
 </head>
 
@@ -293,6 +295,17 @@
                         <ul class="sub">
                             <li><a class="" href="index.php?c=procat&a=add">افزودن دسته بندی جدید</a></li>
                             <li><a class="" href="index.php?c=procat&a=list">لیست دسته بندی</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon-book"></i>
+                            <span>محصولات</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="index.php?c=product&a=add">افزودن محصول جدید</a></li>
+                            <li><a class="" href="index.php?c=product&a=list">لیست محصولات</a></li>
                         </ul>
                     </li>
                 </ul>

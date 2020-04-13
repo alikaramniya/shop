@@ -198,53 +198,62 @@
 			<div class="small-12 medium-12 large-7 mainnav columns">
 
 				<ul class="navigation">
-					<li><a href="home.html">صفحه اصلی</a></li>
-					<li>
+					
 
-						<a href="woman.html">صفحات</a>
-						<!-- dropdown -->
-						<div class="dropdown-menu">
-							<!-- Dropdown Links -->
-							<ul class="dropdown">
-								<li><a href="product-grid.html" title="Product Grid">محصولات شبکه</a></li>
-								<li><a href="product-list.html" title="Product List">لیست محصولات</a></li>
-								<li><a href="product-details.html" title="Product Details">جزییات محصولات</a></li>
-								<li><a href="shopping-cart.html" title="Shopping Cart">سبد خرید</a></li>
-								<li><a href="contact.html" title="Contact us">تماس با صفحه</a></li>
-								<li><a href="information.html" title="Information Page">اطلاعات صفحه</a></li>
-								<li><a href="checkout.html" title="Checkout Page">بررسی صفحه</a></li>
-								<li><a href="elements.html" title="All Elements">همه عناصر</a></li>
-							</ul>
-							<!-- End Dropdown Links -->
-						</div>
-						<!-- End dropdown -->
+					<?php
+						if ($totalProcat > 0) :
+							foreach ($listMainProcat as $value):
+					?>
 
-					</li>
-					<li><a href="#">مرد</a></li>
-					<li>
-						<a href="#">کفش</a>
-						<!-- dropdown -->
-						<div class="dropdown-menu">
-							<!-- Dropdown Links -->
-							<ul class="dropdown">
-								<li><a href="#">
-لباس (20)</a></li>
-								<li><a href="#">
-پیراهن (30)</a></li>
-								<li><a href="#">تی شرت (10)</a></li>
-								<li><a href="#">لباس زمستانه (30)</a></li>
-								<li><a href="#">
-ترخیص کالا از گمرک (20)</a></li>
-								<li><a href="#">
-کفش (1)</a></li>
-								<li><a href="#">فروش (190)</a></li>
-							</ul>
-							<!-- End Dropdown Links -->
-						</div>
-						<!-- End dropdown -->
-					</li>
-					<li><a href="#">تجهیزات جانبی</a></li>
-					<li><a href="#">ترخیص کالا</a></li>
+
+
+
+						<li>
+
+							<a href="woman.html"><?php echo $value->title; ?></a>
+							<!-- dropdown -->
+
+
+							<?php
+								$listSubMainProcat = $procat->listMainChid(['1', $value->id]);
+								if (!empty($listSubMainProcat)) :
+
+							?>
+
+								<div class="dropdown-menu">
+									<!-- Dropdown Links -->
+									<ul class="dropdown">
+										<?php
+											foreach ($listSubMainProcat as $val):
+										?>
+											<li><a href="product-grid.html" title="Product Grid"><?php echo $val->title; ?></a></li>
+										<?php
+											endforeach;
+										?>
+									</ul>
+									<!-- End Dropdown Links -->
+								</div>
+
+							<?php
+								endif;
+							?>
+
+
+							<!-- End dropdown -->
+
+						</li>
+					
+
+
+					<?php
+							endforeach;
+						endif;
+					?>
+
+
+
+
+
 
 				</ul>
 				
