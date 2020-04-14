@@ -8,20 +8,39 @@ class Uploader extends Config
     {
         $folder = 'folder-' . rand();
         if (!file_exists($dir . $folder)) {
-            mkdir($dir . $folder);
-            exit;
-            $picname = $pic['name'];
-            $arr = explode('.', $picname);
-            $ext = end($arr);
-            $new_name = 'pic-' . rand() . '.' . $ext;
-            $from = $pic['tmp_name'];
-            $to = $dir . $folder . '/' . $new_name;
-            move_uploaded_file($from, $to);
-            return $to;
-        } else {
-            $this->uploadPic($pic, $dir);
-        }
+			if ($pic['error'] === 0) {
+				if ($pic['size'] <= 500000) {
+					if (!mkdir($directory = $dir . $folder) && !is_dir($directory)) {
+						throw new \RuntimeException(sprintf('Directory "%s" was no created', $directory));
+					}
+					$picname = $pic['name'];
+					$arr = explode('.', $picname);
+					$ext = end($arr);
+					$new_name = 'pic-' . rand() . '.' . $ext;
+					$from = $pic['tmp_name'];
+					$to = $dir . $folder . '/' . $new_name;
+					move_uploaded_file($from, $to);
+					return $to;
+				}
+			}
+		}
     }
+	
+	public function showFolder($pic)
+	{
+		$arr = explode('/', $pic);
+		$total = count($arr);
+		unset($arr[$total-1]);
+		$folder = implode('/', $arr);
+		return $folder;
+	}
+	
+	public function deleteFileFolder($pic)
+	{
+		$folder = $this->showFolder($pic);
+		unlink($pic);
+		rmdir($folder);
+	}
 }
 
 ?>
