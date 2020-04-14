@@ -18,8 +18,8 @@ class Config
     private final function connect()
     {
         try {
-            $this->user = 'phpmyadmin';
-            $this->pass = 'alikaram98';
+            $this->user = 'root';
+            $this->pass = '';
             $this->db = 'shop';
             $this->pdo = new PDO("mysql:host=localhost;dbname={$this->db};charset=utf8", $this->user, $this->pass);
         } catch (PDOException $e) {
