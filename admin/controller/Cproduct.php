@@ -23,26 +23,33 @@ switch ($action) {
                     $data[$key] = '';
                 }
             }
-            var_dump($data);
-            exit;
             $pro->addPro($data);
         }
         //list category
         $listSubCat = $pro->listSubCat(['1', '0']);
         break;
     case 'list':
-        
+        $listPro = $pro->listPro();
         if (isset($_GET['state'])) {
             $id = $_GET['id'];
             $data['status'] = '1';
-            if ($_GET['state'] == 'ok')
-                $data['status'] = '0';
-            $pro->updatePro($data, $id);
+            $pro->updateSubCat($data, $id);
             header("Location:index.php?c=product&a=list");
         }
         break;
     case 'delete':
         $id = $_GET['id'];
+		//delete file and folder
+		$edit = $pro->showEdit($id);
+		$arr = array(
+			'img1' => $edit->img1,
+			'img2' => $edit->img2,
+			'img3' => $edit->img3
+		);
+		foreach ($arr as $img) {
+			$pro->deleteFileFolder($img);
+		}
+		
         $pro->deletePro($id);
         header("Location:index.php?c=product&a=list");
         break;

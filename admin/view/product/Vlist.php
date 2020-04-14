@@ -1,6 +1,6 @@
 <section class="panel">
     <header class="panel-heading">
-        Advanced Table
+        لیست محصولات
     
     </header>
     <table class="table table-striped table-advance table-hover">
@@ -8,60 +8,79 @@
             <tr>
                 <th>عنوان</th>
                 <th>سرگروه</th>
-                <th>وضعیت</th>
-                <th>ترتیب</th>
+                <th>تصویر اول</th>
+                <th>تصویر دوم</th>
+                <th>تصویر سوم</th>
+                <th>قیمت</th>
+                <th>تعداد</th>
+                <th>اندازه</th>
                 <th>ویرایش</th>
                 <th>حذف</th>
             </tr>
         </thead>
         <tbody>
             <?php
-if ($total > 0):
-    foreach ($listProcat as $value):
+if (!empty($listPro)):
+    foreach ($listPro as $value):
 ?>
             <tr>
                 <td><?php echo $value->title; ?></td>
                 <td>
                     <?php
-                        $chid = $value->chid;
+                        $catId = $value->cat_id;
                         switch (true) {
-                            case ($chid == 0) :
-                                echo "ندارد";
-                                break;
-                            case $parent = $procat->showMainChid($chid);
-                                echo $parent->title;
+                            case $parent = $pro->showSubChid($catId);
+								$title = $parent->title;
+								if ($parent->status == 0)
+									$title = "<a href='index.php?c=product&a=list&state=no&id=$parent->id'><i class='btn btn-danger'>غیرفعال</i></a>";
+                                echo $title;
                                 break;
                             default:
-                                echo "سرگروه حذف شده";
+                                echo "سرگروه حذف شده است";
                                 break;
                         }
                     ?>
                 </td>
+                <td><img src="<?php echo $value->img1;?>" width="50" height="50"/></td>
+                <td><img src="<?php echo $value->img2;?>" width="50" height="50"/></td>
+                <td><img src="<?php echo $value->img3;?>" width="50" height="50"/></td>
+                <td><?php echo $value->price; ?></td>
+                <td><?php echo $value->count; ?></td>
                 <td>
-                    <?php
-                        $status = $value->status;
-                        $state = "<a href='index.php?c=procat&a=list&state=no&id=$value->id'><i class='btn btn-danger'>غیرفعال</i></a>";
-                        if ($status == 1)
-                            $state = "<a href='index.php?c=procat&a=list&state=ok&id=$value->id'><i class='btn btn-success'>فعال</i></a>";
-                        echo $state;
-                    ?>
-                </td>
-                <td><?php echo $value->sort; ?></td>
+					<?php
+						$size = $value->size;
+						switch ($size) {
+							case 0:
+								echo "کوچک";
+								break;
+							case 1:
+								echo "متوسط";
+								break;
+							case 2:
+								echo "بزرگ";
+								break;
+						}
+					?>
+				</td>
                 <td>
-                    <a href="index.php?c=procat&a=edit&id=<?php echo $value->id; ?>">
+                    <a href="index.php?c=product&a=edit&id=<?php echo $value->id; ?>">
                         <button class="btn btn-primary btn-xs"><i class="icon-edit"></i></button>
                     </a>
                 </td>
                 <td>
-                    <a href="index.php?c=procat&a=delete&id=<?php echo $value->id; ?>">
+                    <a href="index.php?c=product&a=delete&id=<?php echo $value->id; ?>">
                         <button class="btn btn-danger btn-xs"><i class="icon-trash"></i></button>
                     </a>
                 </td>
             </tr>
             <?php
     endforeach;
-endif;
+else:
 ?>
         </tbody>
     </table>
+<a href="index.php?c=product&a=add"><span class="btn btn-block btn-danger">لیست محصولات خالی است جهت افزودن محصول جدید کلیک کنید</span></a>
+<?php
+endif;
+?>
 </section>

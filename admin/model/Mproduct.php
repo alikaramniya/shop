@@ -27,15 +27,15 @@ class Product extends Uploader
         return $row;
     }
 
-    public final function showMainChid($chid) {
-        $this->setTbl(self::tbl);
-        $row = $this->showData('id', $chid);
+    public final function showSubChid($catId) {
+        $this->setTbl('procat_tbl');
+        $row = $this->showData('id', $catId);
         return $row;
     }
 
-    public final function updatePro($data, $id)
+    public final function updateSubCat($data, $id)
     {
-        $this->setTbl(self::tbl);
+        $this->setTbl('procat_tbl');
         $this->updateData($data, $id);
     }
 
