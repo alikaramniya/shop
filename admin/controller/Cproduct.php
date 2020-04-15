@@ -62,7 +62,7 @@ switch ($action) {
             header("location:index.php?c=product&a=list");
         }
         //list category
-        $listSubCat = $pro->listSubCat(['1']);
+        $listSubCat = $pro->listSubCat(['1', '0']);
         break;
 }
 
