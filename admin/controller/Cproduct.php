@@ -58,6 +58,24 @@ switch ($action) {
         $edit = $pro->showEdit($id);
         if ($_POST) {
             $data = $_POST['frm'];
+			$pic1 = $_FILES['img1'];
+			$pic2 = $_FILES['img2'];
+			$pic3 = $_FILES['img3'];
+			$arr = array(
+                'img1' => $pic1,
+                'img2' => $pic2,
+                'img3' => $pic3
+            );
+            foreach ($arr as $key => $pic) {
+                if ($pic['name']) {
+					//delete old file and folder
+					$pro->deleteFileFolder($edit->$key);
+                    $dir = "public/img/admin/uploader/product/";
+                    $data[$key] = $pro->uploadPic($pic, $dir);
+                } else {
+                    $data[$key] = $edit->$key;
+                }
+            }
             $pro->updatePro($data, $id);
             header("location:index.php?c=product&a=list");
         }

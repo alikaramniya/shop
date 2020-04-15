@@ -84,7 +84,7 @@
                     <label for="exampleInputFile">توضیحات بلند</label>
                     <textarea name="frm[text]" class="ckeditor form-control" rows="8"><?php echo $edit->text; ?></textarea>
                 </div>
-                <button type="submit" class="btn btn-info">افزودن</button>
+                <button type="submit" class="btn btn-info">ویرایش</button>
             </form>
             <?php
                 else:

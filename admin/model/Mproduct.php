@@ -51,6 +51,12 @@ class Product extends Uploader
         $row = $this->showData('id', $id);
         return $row;
     }
+	
+	public function updatePro($data, $id)
+	{
+		$this->setTbl(self::tbl);
+		$this->updateData($data, $id);
+	}
 }
 
 ?>
