@@ -139,7 +139,7 @@ class Config
                 case ($total == 1) && ($sort == true):
                     $sql = $this->pdo->prepare("select * from {$this->tbl} where $field[0]=:val order by sort asc");
                     break;
-                case ($total == 2) && ($sort == true):
+                case ($total == 1) && ($sort == false):
                     $sql = $this->pdo->prepare("select * from {$this->tbl} where $field[0]=:val");
                     break;
             }
