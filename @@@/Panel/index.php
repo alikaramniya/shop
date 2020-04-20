@@ -1,9 +1,9 @@
 ﻿<?php
-    include_once '../include/user_functions.php';
-    if(isset($_POST['btn'])){
-        $data=$_POST['frm'];
-        user_login($data);
-    }
+include_once '../include/user_functions.php';
+if (isset($_POST['btn'])) {
+    $data = $_POST['frm'];
+    user_login($data);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,10 +21,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet"/>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -33,12 +33,12 @@
     <![endif]-->
 </head>
 
-  <body class="login-body">
+<body class="login-body">
 
-    <div class="container">
- 	 <img src="img/logo.png" width="150" height="150" alt="" class="academyitLogo"/>
+<div class="container">
+    <img src="img/logo.png" width="150" height="150" alt="" class="academyitLogo"/>
 
-      <form class="form-signin" action="" method="post">
+    <form class="form-signin" action="" method="post">
         <h2 class="form-signin-heading">همین حالا وارد شوید</h2>
         <div class="login-wrap">
             <input type="text" class="form-control" placeholder="نام کاربری" name="frm[username]" autofocus>
@@ -50,10 +50,10 @@
             <button class="btn btn-lg btn-login btn-block" type="submit" name="btn">ورود</button>
         </div>
 
-      </form>
+    </form>
 
-    </div>
+</div>
 
 
-  </body>
+</body>
 </html>

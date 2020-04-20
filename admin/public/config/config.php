@@ -1,6 +1,6 @@
 <?php
 
-session_start(); 
+session_start();
 
 class Config
 {
@@ -27,12 +27,12 @@ class Config
         }
     }
 
-   protected final function setTbl($tbl)
+    protected final function setTbl($tbl)
     {
         $this->tbl = $tbl;
     }
 
-   protected final function selectData($field)
+    protected final function selectData($field)
     {
         if (is_array($field)) {
             $fields = implode(', ', $field);
@@ -45,7 +45,7 @@ class Config
         return $row;
     }
 
-   protected final function showData($field, $val)
+    protected final function showData($field, $val)
     {
         $sql = $this->pdo->prepare("select * from {$this->tbl} where $field=:val");
         $type = gettype($val);
@@ -65,7 +65,7 @@ class Config
         return $row;
     }
 
-   protected final function insertData($data)
+    protected final function insertData($data)
     {
         if (is_array($data)) {
             $field = array_keys($data);
@@ -90,7 +90,7 @@ class Config
         }
     }
 
-   protected final function updateData($data, $id)
+    protected final function updateData($data, $id)
     {
         if (is_array($data)) {
             $field = array_keys($data);
@@ -125,7 +125,7 @@ class Config
         $sql->execute();
     }
 
-   protected final function chooseData($field, $sort)
+    protected final function chooseData($field, $sort)
     {
         if (is_array($field)) {
             $total = count($field);
@@ -147,7 +147,7 @@ class Config
         }
     }
 
-   protected final function likeData($field, $val, $sort)
+    protected final function likeData($field, $val, $sort)
     {
         $sql = $this->pdo->prepare("select * from {$this->tbl} where $field like '%$val%'");
         if ($sort == true)
@@ -157,7 +157,7 @@ class Config
         return $row;
     }
 
-   protected final function extraSql($str)
+    protected final function extraSql($str)
     {
         $sql = $this->pdo->prepare("{$str}");
         return $sql;

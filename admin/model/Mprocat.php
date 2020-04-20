@@ -3,7 +3,9 @@
 class Procat extends Uploader
 {
     const tbl = "procat_tbl";
-    public final function addProcat($data) {
+
+    public final function addProcat($data)
+    {
         $this->setTbl(self::tbl);
         $this->insertData($data);
     }
@@ -26,7 +28,8 @@ class Procat extends Uploader
         return $row;
     }
 
-    public final function showMainChid($chid) {
+    public final function showMainChid($chid)
+    {
         $this->setTbl(self::tbl);
         $row = $this->showData('id', $chid);
         return $row;
@@ -45,7 +48,7 @@ class Procat extends Uploader
     }
 
     public final function showEdit($id)
-    { 
+    {
         $this->setTbl(self::tbl);
         $row = $this->showData('id', $id);
         return $row;

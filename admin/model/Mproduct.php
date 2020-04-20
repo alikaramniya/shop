@@ -3,7 +3,9 @@
 class Product extends Uploader
 {
     const tbl = "product_tbl";
-    public final function addPro($data) {
+
+    public final function addPro($data)
+    {
         $this->setTbl(self::tbl);
         $this->insertData($data);
     }
@@ -27,7 +29,8 @@ class Product extends Uploader
         return $row;
     }
 
-    public final function showSubChid($catId) {
+    public final function showSubChid($catId)
+    {
         $this->setTbl('procat_tbl');
         $row = $this->showData('id', $catId);
         return $row;
@@ -46,17 +49,38 @@ class Product extends Uploader
     }
 
     public final function showEdit($id)
-    { 
+    {
         $this->setTbl(self::tbl);
         $row = $this->showData('id', $id);
         return $row;
     }
-	
-	public function updatePro($data, $id)
-	{
-		$this->setTbl(self::tbl);
-		$this->updateData($data, $id);
-	}
+
+    public final function updatePro($data, $id)
+    {
+        $this->setTbl(self::tbl);
+        $this->updateData($data, $id);
+    }
+
+    public final function stateSubProCat($catId)
+    {
+        $this->setTbl('procat_tbl');
+        $row = $this->showData('id', $catId);
+        if ($row->status == '1') {
+            $state = $this->stateMainProCat($row->chid);
+            return $state;
+        }
+    }
+
+    public final function stateMainProCat($chid)
+    {
+        $this->setTbl('procat_tbl');
+        $row = $this->showData('id', $chid);
+        if ($row->status == '1')
+            return true;
+        else
+            return false;
+    }
+
 }
 
 ?>

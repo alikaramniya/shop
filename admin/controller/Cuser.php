@@ -16,8 +16,8 @@ switch ($action) {
                         if ($data['remember']) {
                             $email = $row->email;
                             $password = $data['password'];
-                            setcookie('email', $email, time()+60*60, 'admin');
-                            setcookie('password', $password, time()+60*60, 'admin');
+                            setcookie('email', $email, time() + 60 * 60, 'admin');
+                            setcookie('password', $password, time() + 60 * 60, 'admin');
                         }
                         $_SESSION['name'] = $row->name . ' ' . $row->lastname;
                         header("Location:index.php?login=ok");
@@ -36,8 +36,8 @@ switch ($action) {
                 if (isset($_COOKIE['email']) and isset($_COOKIE['password'])) {
                     $email = $row->email;
                     $password = $data['password'];
-                    setcookie('email', $email, time()-10, 'admin');
-                    setcookie('password', $password, time()-10, 'admin');
+                    setcookie('email', $email, time() - 10, 'admin');
+                    setcookie('password', $password, time() - 10, 'admin');
                 }
                 session_destroy();
                 header("Location:login.php?logout=ok");
