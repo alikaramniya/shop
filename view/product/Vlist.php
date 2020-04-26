@@ -3,8 +3,19 @@
     <!-- Content Row -->
     <div class="row">
         <ul class="breadcrumbs small-12 medium-8 large-8 columns">
-            <li><a href="#" title="Homepage">صفحه اصلی</a></li>
-            <li>دسته بندی</li>
+            <?php
+            if ($subCat == 'no')
+                echo "<li><a href='#'title='allProduct'>همه محصولات</a></li>";
+            else
+                echo "<li><a href='#' title='main category'>" . $mainCat->title . "</a></li>";
+            ?>
+
+            <?php
+            if ($subCat == 'no')
+                echo "<li></li>";
+            else
+                echo "<li>" . $subCat->title . "</li>";
+            ?>
         </ul>
     </div>
     <!-- End Content Row -->
@@ -17,53 +28,56 @@
     <div class="small-12 small-centered medium-3 large-3 large-uncentered medium-uncentered  columns">
         <!-- Category Listing Module -->
         <div class="lft-module-heading">
-
-            گروه ها
+            دسته نبدی ها
         </div>
         <!-- Listing -->
         <ul class="cat-listing">
-            <li>
-                <a href="#" title="Dress">
-                    لباس (10)
-                </a>
-            </li>
-            <li>
-                <a href="#" title="Shoes">
-                    کفش
-                </a>
-            </li>
-            <li>
-                <a href="#" title="Accesories">
-                    لوازم جانبی (100)
-                </a>
-            </li>
-            <li><a href="#" title="belts">کیف و کمربند</a></li>
-            <li>
-                <a href="#" title="Handbads">
-                    کیف های دستی (10)
-                </a>
-            </li>
-            <li>
-                <a href="#" title="Clearance">
-                    فروش ترخیص (320)
-                </a>
-            </li>
+
+
+            <?php
+            $listSubCat = $pro->listSubCat(['1', '0']);
+            if (!empty($listSubCat)) :
+                foreach ($listSubCat as  $value):
+                    ?>
+
+
+                    <li>
+                        <a href="index.php?c=product&a=list&id=<?php echo $value->id; ?>">
+                            <?php echo $value->title; ?>
+                        </a>
+                    </li>
+
+
+                <?php
+                endforeach;;
+            endif;
+            ?>
+
+
         </ul>
         <!-- End Category Listing Module -->
 
         <!-- BestSeller Module -->
         <div class="lft-module-heading">
-            لورم ایپسوم
+            محصولات مرتبط
         </div>
         <!-- Listings -->
+
+
+        <?php
+            if (!empty($listProDefault)) :
+                foreach ($listProDefault as $value) :
+        ?>
+
+
         <div class="bst-seller-list">
             <div class="bst-seller-thumb">
-                <img src="img/cart/1.jpg" alt="thumbnail1"/>
+                <img src="admin/<?php echo $value->img1; ?>" alt="thumbnail1"/>
             </div>
             <div class="bst-seller-content">
                 <div class="bst-seller-title">
                     <a href="#" title="turtle neck">
-                        لورم ایپسوم یا طرح‌نما
+                        محصولات مرتبط
                     </a>
                 </div>
                 <div class="bst-seller-price">$78.00</div>
@@ -75,47 +89,12 @@
             <div class="clearing"></div>
         </div>
 
-        <div class="bst-seller-list">
-            <div class="bst-seller-thumb">
-                <img src="img/cart/1.jpg" alt="thumbnail1"/>
-            </div>
-            <div class="bst-seller-content">
-                <div class="bst-seller-title">
-                    <a href="#" title="turtle neck">
-                        لورم ایپسوم یا طرح‌نما
-                    </a>
-                </div>
-                <div class="bst-seller-price">$78.00</div>
-                <div class="bst-seller-cart">
-                    <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید/a>
-                </div>
-            </div>
-            <div class="clearing"></div>
-        </div>
 
-        <div class="bst-seller-list">
-            <div class="bst-seller-thumb">
-                <img src="img/cart/1.jpg" alt="thumbnail1"/>
-            </div>
-            <div class="bst-seller-content">
-                <div class="bst-seller-title">
-                    <a href="#" title="turtle neck">
-                        لورم ایپسوم یا طرح‌نما
-                    </a>
-                </div>
-                <div class="bst-seller-price">$78.00</div>
-                <div class="bst-seller-cart">
-                    <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید/a>
-                </div>
-            </div>
-            <div class="clearing"></div>
-        </div>
-        <!-- Ennd Bestseller Module -->
+        <?php
+                endforeach;
+            endif;
+        ?>
 
-        <!-- ADVERTISEMENT -->
-        <div class="right-ad text-center">
-            <img src="img/ads/product-list.jpg" alt="Advertisement"/>
-        </div>
     </div>
     <!-- End Widget Right -->
 
@@ -131,7 +110,8 @@
         <div class="sort-container">
             <!-- Swtich View Mode -->
             <div class="small-12 small-centered medium-uncentered large-uncentered medium-4 large-4 columns">
-                <div class="sort-icon"><a href="product-grid.html" title="Product Grid"><i class="icon-grid"></i></a>
+                <div class="sort-icon"><a href="index.php?c=product&a=list	" title="Product Grid"><i
+                                class="icon-grid"></i></a>
                 </div>
                 <div class="sort-icon"><i class="icon-menu"></i></div>
                 <a class="p-compare-link" href="#" title="Product Compare">
@@ -189,7 +169,7 @@
                         <div class="small-7 medium-7 large-9 text-right columns">
                             <!-- Product Link -->
                             <div class="product-link">
-                                <a href="#"><?php echo $value->title; ?></a>
+                                <a href="index.php?c=product&a=details&id=<?php echo $value->id; ?>"><?php echo $value->title; ?></a>
                             </div>
 
                             <!-- Product Rating -->
@@ -232,11 +212,15 @@
                 <?php
                 endif;
             endforeach;
+        else:
+
+            ?>
+            <div style="width:100%; background-color:red; padding:15px 0; border-radius:8px; color:whitesmoke; font-weight:bold; margin:0; display:inline-block; text-align:center;">
+                برای این دسته بندی هیچ محصولی درج نشده است
+            </div>
+        <?php
         endif;
-
         ?>
-
-
         <!-- END PRODUCT LISTING -->
 
         <div class="clearing"></div>

@@ -3,9 +3,10 @@
     <!-- Content Row -->
     <div class="row">
         <ul class="breadcrumbs small-12 medium-8 large-8 columns">
-            <li><a href="#" title="Homepage">صفحه اصلی</a></li>
-            <li><a href="#" title="product grid">محصولات شبکه</a></li>
-            <li>محصولات بالا</li>
+            <li><a href="#" title="Homepage"><?php echo $mainCat->title; ?></a></li>
+            <li><a href='index.php?c=product&a=list&id=<?php echo $subCat->id; ?>'><?php echo $subCat->title; ?></a>
+            </li>
+            <li><?php echo $details->title; ?></li>
         </ul>
     </div>
     <!-- End Content Row -->
@@ -19,7 +20,7 @@
     <div class="small-12 small-centered medium-4 medium-uncentered large-4 large-uncentered product-thumb columns">
         <!-- Product Main Photo -->
         <div class="product-main-photo">
-            <img class="p-photo" src="admin/<?php echo $details->img1; ?>" data-large="img/products/product-large.jpg"
+            <img class="p-photo" src="admin/<?php echo $details->img1; ?>" width="100%" height="100%" data-large="img/products/product-large.jpg"
                  alt="Product Main Thumb"/>
         </div>
         <!-- End product main photo -->
@@ -189,11 +190,14 @@
             });</script>
         <!-- Share Widget -->
         <div class="share-widget">
-            <span displaytext='Google +1' class='st_plusone'></span>
-            <span class='st_facebook' displaytext='Facebook'></span>
-            <span class='st_twitter' displaytext='Tweet'></span>
-            <span class='st_linkedin' displaytext='LinkedIn'></span>
-            <span class='st_pinterest' displaytext='Pinterest'></span>
+            <a href="https://www.google.com" target="_blank"><span displaytext='Google +1'
+                                                                   class='st_plusone'></span></a>
+            <a href="https://www.facebook.com" target="_blank"><span class='st_facebook' displaytext='Facebook'></span></a>
+            <a href="https://www.tweet.com" target="_blank"><span class='st_twitter' displaytext='Tweet'></span></a>
+            <a href="https://www.linkdin.com" target="_blank"><span class='st_linkedin'
+                                                                    displaytext='LinkedIn'></span></a>
+            <a href="https://www.pinterest.com" target="_blank"><span class='st_pinterest'
+                                                                      displaytext='Pinterest'></span></a>
 
         </div>
         <!-- End Share Widget -->
@@ -208,56 +212,39 @@
             محصولات مرتبط
         </div>
         <!-- Listings -->
-        <div class="bst-seller-list">
-            <div class="bst-seller-thumb">
-                <img src="img/cart/1.jpg" alt="thumbnail1"/>
-            </div>
-            <div class="bst-seller-content">
-                <div class="bst-seller-title"><a href="#" title="turtle neck">
 
-                        لورم ایپسوم یا طرح‌نما </a></div>
-                <div class="bst-seller-price">$78.00</div>
-                <div class="bst-seller-cart">
-                    <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
+
+        <?php
+        if (!empty($listProDefault)):
+            foreach ($listProDefault as $val) :
+                if ($val->id == $details->id)
+                    continue;
+                ?>
+
+
+                <div class="bst-seller-list">
+                    <div class="bst-seller-thumb">
+                        <img src="admin/<?php echo $val->img1; ?>" alt="thumbnail1"/>
+                    </div>
+                    <div class="bst-seller-content">
+                        <div class="bst-seller-title"><a href="index.php?c=product&a=details&id=<?php echo $val->id; ?>" title="turtle neck">
+
+                                <?php echo $val->title; ?></a></div>
+                        <div class="bst-seller-price">تومان <?php echo $val->price; ?></div>
+                        <div class="bst-seller-cart">
+                            <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
+                        </div>
+                    </div>
+
+                    <div class="clearing"></div>
                 </div>
-            </div>
 
-            <div class="clearing"></div>
-        </div>
 
-        <div class="bst-seller-list">
-            <div class="bst-seller-thumb">
-                <img src="img/cart/1.jpg" alt="thumbnail1"/>
-            </div>
-            <div class="bst-seller-content">
-                <div class="bst-seller-title"><a href="#" title="turtle neck">
+            <?php
+            endforeach;
+        endif;
+        ?>
 
-                        لورم ایپسوم یا طرح‌نما </a></div>
-                <div class="bst-seller-price">$78.00</div>
-                <div class="bst-seller-cart">
-                    <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
-                </div>
-            </div>
-
-            <div class="clearing"></div>
-        </div>
-
-        <div class="bst-seller-list">
-            <div class="bst-seller-thumb">
-                <img src="img/cart/1.jpg" alt="thumbnail1"/>
-            </div>
-            <div class="bst-seller-content">
-                <div class="bst-seller-title"><a href="#" title="turtle neck">
-
-                        لورم ایپسوم یا طرح‌نما </a></div>
-                <div class="bst-seller-price">$78.00</div>
-                <div class="bst-seller-cart">
-                    <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
-                </div>
-            </div>
-
-            <div class="clearing"></div>
-        </div>
 
         <!-- Ennd related product Module -->
 
