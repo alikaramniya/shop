@@ -203,14 +203,14 @@
 
 
                     <?php
-                    if ($totalProcat > 0) :
+                    if (!empty($listMainProcat)) :
                         foreach ($listMainProcat as $value):
                             ?>
 
 
                             <li>
 
-                                <a href="woman.html"><?php echo $value->title; ?></a>
+                                <a href="#"><?php echo $value->title; ?></a>
                                 <!-- dropdown -->
 
 
@@ -226,7 +226,7 @@
                                             <?php
                                             foreach ($listSubMainProcat as $val):
                                                 ?>
-                                                <li><a href="product-grid.html"
+                                                <li><a href="index.php?c=product&a=list&id=<?php echo $val->id; ?>"
                                                        title="Product Grid"><?php echo $val->title; ?></a></li>
                                             <?php
                                             endforeach;
