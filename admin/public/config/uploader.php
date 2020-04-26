@@ -21,7 +21,9 @@ class Uploader extends Config
                     $to = $dir . $folder . '/' . $new_name;
                     move_uploaded_file($from, $to);
                     return $to;
-                }
+                } else {
+					exit('حجم فایل انتخابی بیش از جد مجاز است');
+				}
             }
         }
     }
