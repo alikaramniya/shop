@@ -35,6 +35,13 @@ class Product extends Uploader
         $row = $this->showData('id', $catId);
         return $row;
     }
+	
+	public final function showMainChid($chid)
+	{
+		$this->setTbl('procat_tbl');
+		$row = $this->showData('id', $chid);
+		return $row;
+	}
 
     public final function updateSubCat($data, $id)
     {
@@ -80,7 +87,22 @@ class Product extends Uploader
         else
             return false;
     }
+	
+	public final function showSubCat($id)
+	{
+		$this->setTbl('procat_tbl');
+		$row = $this->showData('id', $id);
+		return $row;
+	}
 
+	public final function listProSubCat($id) {
+		$this->setTbl(self::tbl);
+		$sql = $this->chooseData(['cat_id'], false);
+		$sql->bindParam(":val", $id, PDO::PARAM_INT);
+		$sql->execute();
+		$row = $sql->fetchAll(PDO::FETCH_OBJ);
+		return $row;
+	}
 }
 
 ?>
