@@ -294,6 +294,17 @@
                 <li class="sub-menu">
                     <a href="javascript:;" class="">
                         <i class="icon-book"></i>
+                        <span>مدیریت منو ها</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="index.php?c=menu&a=add">افزودن منو جدید</a></li>
+                        <li><a class="" href="index.php?c=menu&a=list">لیست منو ها</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon-book"></i>
                         <span>دسته بندی محصولات</span>
                         <span class="arrow"></span>
                     </a>
