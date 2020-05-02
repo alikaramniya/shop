@@ -1,24 +1,29 @@
 <div class="col-lg-12">
     <section class="panel">
         <header class="panel-heading">
-            افزودن دسته بندی جدید
+            افزودن منو جدید
         </header>
         <div class="panel-body">
-            <form role="form" action="index.php?c=procat&a=add" method="post">
+            <form role="form" action="index.php?c=menu&a=add" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">عنوان</label>
                     <input type="text" class="form-control" name="frm[title]" id="exampleInputEmail1"
                            placeholder="عنوان خود را وارد کنید">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">آدرس</label>
+                    <input type="text" class="form-control" name="frm[url]" id="exampleInputEmail1"
+                           placeholder="آدرس خود را وارد کنید">
+                </div>
+                <div class="form-group">
                     <label for="exampleInputPassword1">سرگروه</label>
                     <select class="form-control m-bot15" name="frm[chid]">
                         <option value="0">سرگروه</option>
                         <?php
-                        if ($total > 0) :
-                            foreach ($listMainChid as $value) :
+                        if (!empty($list_chid)):
+                            foreach ($list_chid as $value) :
                                 ?>
-                                <option value="<?php echo $value->id; ?>"><?php echo $value->title; ?></option>
+                                <option value="<?php echo $value->id;  ?>"><?php echo $value->title; ?></option>
                             <?php
                             endforeach;
                         endif;
