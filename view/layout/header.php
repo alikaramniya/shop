@@ -266,17 +266,25 @@
             <!-- End Searchbox -->
 
             <!-- Sub Navigation -->
-            <div class="subnavigation">
-                <ul class="subnav">
-                    <li><a href="#">
-                            ثبت نام</a></li>
-                    <li><a href="#">ورود به صفحه</a></li>
-                    <li><a href="#">علاقه مندی ها (10)</a></li>
-                    <li><a href="#">
-                            حساب من</a></li>
-                    <li><a href="#">بررسی</a></li>
-                </ul>
-            </div>
+
+            <?php
+            if (!empty($listMainMenu)) :
+                ?>
+                <div class="subnavigation">
+                    <ul class="subnav">
+                        <?php
+                        foreach ($listMainMenu as $val):
+                            ?>
+                            <li><a href="/<?php echo $val->url; ?>" target="_blank"><?php echo $val->title; ?></a></li>
+                        <?php
+                        endforeach;
+                        ?>
+                    </ul>
+                </div>
+            <?php
+            endif;
+            ?>
+
             <!-- End Sub Navigation -->
 
         </div>
