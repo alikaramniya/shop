@@ -28,7 +28,14 @@ switch ($action) {
         header("Location: index.php?c=menu&a=list");
         break;
     case 'edit':
-
+        $id = $_GET['id'];
+        $edit = $menu->showEdit($id);
+        if ($_POST) {
+            $data = $_POST['frm'];
+            $menu->update_menu($data, $id);
+            header("Location: index.php?c=menu&a=list");
+        }
+        $list_chid = $menu->list_chid(['1', 0]);
         break;
 }
 

@@ -21,6 +21,13 @@ class Menu extends Uploader
         return $row;
     }
 
+    public function showEdit($id)
+    {
+        $this->setTbl(self::tbl);
+        $row = $this->showData('id', $id);
+        return $row;
+    }
+
     public final function showMainChid($chid)
     {
         $this->setTbl(self::tbl);
@@ -44,6 +51,17 @@ class Menu extends Uploader
     {
         $this->setTbl(self::tbl);
         $row = $this->selectData('*');
+        return $row;
+    }
+
+    public final function listMainchid($arr)
+    {
+        $this->setTbl(self::tbl);
+        $sql = $this->chooseData(['status', 'chid'], true);
+        $sql->bindParam(":val1", $arr['0']);
+        $sql->bindParam(":val2", $arr['1'], PDO::PARAM_INT);
+        $sql->execute();
+        $row = $sql->fetchAll(PDO::FETCH_OBJ);
         return $row;
     }
 }
