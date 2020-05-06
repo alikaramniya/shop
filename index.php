@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 require_once "admin/public/config/uploader.php";
 require_once "controller/Clayout.php";
 require_once "view/layout/header.php";
@@ -12,5 +12,5 @@ if (file_exists("controller/C$controller.php")) {
 }
 
 require_once "view/layout/footer.php";
-
+ob_end_flush();
 ?>
