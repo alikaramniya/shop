@@ -1,6 +1,6 @@
 <div class="row bottom-margin featured-row">
 
-    <h1>تماس با ما</h1>
+    <h1>ثبت نام در سایت</h1>
     <div class="fr-border"></div>
 
     <div class="small-12 small-centered medium-5 medium-uncentered large-5 large-uncentered columns">
@@ -20,14 +20,14 @@
 
     <!-- Contact form -->
     <div class="small-12 small-centered medium-7 medium-uncentered large-7 large-uncentered columns">
-        <h2>ارسال یک پیام</h2>
+        <h2>فرم ثبت نام</h2>
         <form action="index.php?c=customer&a=register" class="form" method="post">
 
             <label for="">ایمیل:</label>
-            <input type="text" placeholder="you@domain.com">
+            <input type="email" name="frm[email]" placeholder="you@domain.com">
 
             <label>رمز:</label>
-            <input type="text" placeholder="رمز خود را وارد کنید">
+            <input type="password" name="frm[password]" placeholder="رمز خود را وارد کنید">
             <button class="form-btn"><i class="icon-arrow-left"></i>ثبت</button>
 
         </form>
