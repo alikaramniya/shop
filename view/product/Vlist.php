@@ -77,12 +77,12 @@
             <div class="bst-seller-content">
                 <div class="bst-seller-title">
                     <a href="#" title="turtle neck">
-                        محصولات مرتبط
+                        <?php echo $value->title; ?>
                     </a>
                 </div>
                 <div class="bst-seller-price">$78.00</div>
                 <div class="bst-seller-cart">
-                    <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
+                    <a href="index.php?c=basket&a=add&pro_id=<?php echo $value->id; ?>&page=list" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
                 </div>
             </div>
 
@@ -195,7 +195,7 @@
                             <!-- AddtoCart Buttons -->
                             <div class="f-product-hover text-right">
                                 <div class="f-button">
-                                    <a href="#" title="Add to Cart"><i class="icon-cart"></i></a>
+                                    <a href="index.php?c=basket&a=add&pro_id=<?php echo $value->id; ?>&page=list" title="Add to Cart"><i class="icon-cart"></i></a>
                                     <a href="#" title="Add to Wishlist"><i class="icon-heart"></i></a>
                                     <a href="#" title="Add to Compare"><i class="icon-tags"></i></a>
                                 </div>
