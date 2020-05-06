@@ -135,7 +135,7 @@
         <!-- Add To Cart -->
         <div class="small-12 small-centered medium-7 medium-uncentered large-6 large-uncentered q-lineheight cart-area columns">
 
-            <div class="continue-button"><a href="#" title="Add to cart"><i class="icon-cart"></i>
+            <div class="continue-button"><a href="index.php?c=basket&a=add&pro_id=<?php echo $val->id; ?>&page=details" title="Add to cart"><i class="icon-cart"></i>
                     اضافه کردن به سبد</a></div>
 
         </div>
@@ -232,7 +232,7 @@
                                 <?php echo $val->title; ?></a></div>
                         <div class="bst-seller-price">تومان <?php echo $val->price; ?></div>
                         <div class="bst-seller-cart">
-                            <a href="#" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
+                            <a href="index.php?c=basket&a=add&page=<?php echo $val->id ?>&page=details" title="Add to cart"><i class="icon-cart"></i>اضافه به سبد خرید</a>
                         </div>
                     </div>
 
