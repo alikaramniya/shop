@@ -43,7 +43,16 @@
 
             <!-- Welcome Txt -->
             <div class="small-12 medium-5 large-5 welcome-guest-text columns">
-                کاربر مهمان خوش آمدید
+                <?php
+                    if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
+                        echo $_SESSION['user_name'] . " عزیز خوش آمدید ";
+                        echo " | <a href='index.php?c=customer&a=logout&logout=ok' style='color:whitesmoke; text-decoration: none;'>خروج</a>";
+                    } else {
+                        echo "کاربر مهمان خوش آمدید   ";
+                        echo "<a href='index.php?c=customer&a=login' style='color:whitesmoke; text-decoration: none;'> ورود </a>" . " | ";
+                        echo "<a href='index.php?c=customer&a=register' style='color:whitesmoke; text-decoration: none;'> ثبت نام </a>";
+                    }
+                ?>
             </div>
             <!-- End Welcome Txt -->
             <!-- Currency -->
