@@ -34,10 +34,10 @@ switch ($action) {
         if (isset($_GET['logout'])) {
             if ($_GET['logout'] == 'ok') {
                 if (isset($_COOKIE['email']) and isset($_COOKIE['password'])) {
-                    $email = $row->email;
-                    $password = $data['password'];
-                    setcookie('email', $email, time() - 10, 'admin');
-                    setcookie('password', $password, time() - 10, 'admin');
+                    $email = $_COOKIE['email'];
+                    $password = $_COOKIE['password'];
+                    setcookie('email', $email, time() - 10, '/admin');
+                    setcookie('password', $password, time() - 10, '/admin');
                 }
                 session_destroy();
                 header("Location:login.php?logout=ok");

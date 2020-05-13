@@ -28,8 +28,9 @@
 <?php
 require_once "public/config/uploader.php";
 $action = 'login';
-if (isset($_COOKIE['email']) and isset($_COOKIE['password']))
+if (isset($_COOKIE['email']) and isset($_COOKIE['password'])) {
     $action = 'cookie';
+}
 if (file_exists("controller/Cuser.php"))
     require_once "controller/Cuser.php";
 ?>
