@@ -103,6 +103,19 @@ class Product extends Uploader
 		$row = $sql->fetchAll(PDO::FETCH_OBJ);
 		return $row;
 	}
+
+	public final function listProBasket($proId)
+    {
+        $this->setTbl(self::tbl);
+        $row = $this->showData('id', $proId);
+        return $row;
+    }
+
+    public final function deleteBasket($id)
+    {
+        $this->setTbl(self::tbl);
+        $this->deleteData($id);
+    }
 }
 
 ?>
