@@ -9,8 +9,9 @@ switch ($action) {
             $data = $_POST['frm'];
             $data['vc'] = microtime();
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-            mail($data[email], 'ali karamniya', "<a href='index.php?c=customer&a=vc&vc=$data[vc]'>barayeh kamel kardan farayand verify click konid</a>");
+            //mail($data[email], 'ali karamniya', "<a href='index.php?c=customer&a=vc&vc=$data[vc]'>barayeh kamel kardan farayand verify click konid</a>");
             $customer->add_customer($data);
+            header("location:index.php?c=customer&a=vc&vc=$data[vc]");
         }
         break;
     case 'login':
@@ -25,6 +26,8 @@ switch ($action) {
                         $_SESSION['user_id'] = $row->id;
                         header("Location: index.php?login=cookie");
                     }
+                } else {
+                    header("Location:index.php?c=customer&a=register");
                 }
             }
         } else {
@@ -72,8 +75,10 @@ switch ($action) {
             if (!empty($row)) {
                 $data['status'] = '1';
                 $data['vc'] = '';
+                $_SESSION['user_id'] = $row->id;
+                $_SESSION['user_name'] = $row->name;
                 $customer->updateCustomer($data, $row->id);
-                header("Location: index.php?c=customer&a=login");
+                header("Location: index.php");
             }
         }
         break;

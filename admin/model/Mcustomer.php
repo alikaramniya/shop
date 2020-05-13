@@ -10,11 +10,17 @@ class Customer extends Uploader
         $this->insertData($data);
     }
 
-    public final function showEdit($vc)
+ 	public final function showEdit($vc)
+ 	{
+ 		$this->setTbl(self::tbl);
+ 		$row = $this->showData('vc', $vc);
+ 		return $row;
+ 	}
+
+ 	public final function updateCustomer($data, $id)
     {
         $this->setTbl(self::tbl);
-        $row = $this->showData('vc', $vc);
-        return $row;
+        $this->updateData($data, $id);
     }
 
     public final function login($email)
@@ -22,17 +28,5 @@ class Customer extends Uploader
         $this->setTbl(self::tbl);
         $row = $this->showData('email', $email);
         return $row;
-    }
-
-    public final function showRow($id)
-    {
-        $this->setTbl(self::tbl);
-        $row = $this->showData('id', $id);
-        return $row;
-    }
-    public final function updateCustomer($data, $id)
-    {
-        $this->setTbl(self::tbl);
-        $this->updateData($data, $id);
     }
 }
