@@ -23,6 +23,9 @@
         <h2>فرم ثبت نام</h2>
         <form action="index.php?c=customer&a=register" class="form" method="post">
 
+            <label for="">نام:</label>
+            <input type="text" name="frm[name]" placeholder="نام خود را وارد کنید">
+
             <label for="">ایمیل:</label>
             <input type="email" name="frm[email]" placeholder="you@domain.com">
 
