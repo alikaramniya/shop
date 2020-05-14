@@ -43,16 +43,18 @@
 
             <!-- Welcome Txt -->
             <div class="small-12 medium-5 large-5 welcome-guest-text columns">
-                <?php
+                <div class="topHeader">
+                    <?php
                     if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                         echo $_SESSION['user_name'] . " عزیز خوش آمدید ";
-                        echo " | <a href='index.php?c=customer&a=logout&logout=ok' style='color:whitesmoke; text-decoration: none;'>خروج</a>";
+                        echo "<a href='index.php?c=customer&a=logout&logout=ok'>خروج</a>";
                     } else {
                         echo "کاربر مهمان خوش آمدید   ";
-                        echo "<a href='index.php?c=customer&a=login' style='color:whitesmoke; text-decoration: none;'> ورود </a>" . " | ";
-                        echo "<a href='index.php?c=customer&a=register' style='color:whitesmoke; text-decoration: none;'> ثبت نام </a>";
+                        echo "<a href='index.php?c=customer&a=login'> ورود </a>" . " ";
+                        echo "<a href='index.php?c=customer&a=register'> ثبت نام </a>";
                     }
-                ?>
+                    ?>
+                </div>
             </div>
             <!-- End Welcome Txt -->
             <!-- Currency -->
@@ -73,7 +75,18 @@
                 <!-- Topcart Text -->
                 <div class="topcart-text">
 
-                    سبد خرید (3 مورد)
+                    <?php
+                    if (isset($_SESSION['user_id'])) {
+                        if (!empty($listBasket)) {
+                            $countBasket = count($listBasket);
+                            echo "سبد خرید ($countBasket مورد )";
+                        } else {
+                            echo "سبد خرید (تهی)";
+                        }
+                    } else {
+                        echo "لطفا ابتدا وارد اکانت خود شوید";
+                    }
+                    ?>
                 </div>
                 <!-- End Topcart Text -->
 
@@ -91,92 +104,78 @@
                 <!-- Cart items -->
                 <div class="small-12 medium-12 large-4 cart-dropdown">
 
-                    <!-- Item List -->
-                    <div class="cart-item-list">
 
-                        <!-- Thumb -->
-                        <div class="cart-item-thumb right">
-                            <img src="img/cart/1.jpg" alt="Cart product 1"/>
-                        </div>
-                        <!-- End thumb -->
-
-                        <!-- Content -->
-                        <div class="cart-item-content">
-                            <!-- {product name} -->
-                            <div class="cart-item-title">
-                                <a href="#">
-
-                                    لورم ایپسوم یا طرح‌نما</a>
-                            </div>
-                            <!-- PRice -->
-                            <div class="cart-item-price">
-                                $109.00
-                            </div>
-                            <!-- Remove -->
-                            <a href="#" class="cart-remove">X</a>
-                            <!-- Quanitity -->
-                            <div class="cart-item-quantity">
-
-                                تعداد: (1)
-                            </div>
+                    <?php
+                    $total = 0;
+                    if (isset($_SESSION['user_id'])) :
+                        if (!empty($listBasket)):
+                            foreach ($listBasket as $value):
+                                $pro_id = $value->pro_id;
+                                $showPro = $pro->listProBasket($pro_id);
+                                ?>
 
 
-                        </div>
-                        <!-- End Content -->
+                                <!-- Item List -->
+                                <div class="cart-item-list">
 
-                        <!-- Clearing -->
-                        <div class="clearing"></div>
+                                    <!-- Thumb -->
+                                    <div class="cart-item-thumb right">
+                                        <img src="admin/<?php echo $showPro->img1; ?>" class="imageBasket"
+                                             alt="Cart product 1"/>
+                                    </div>
+                                    <!-- End thumb -->
 
-                    </div>
-                    <!-- End item list -->
-                    <!-- Item List -->
-                    <div class="cart-item-list">
+                                    <!-- Content -->
+                                    <div class="cart-item-content">
+                                        <!-- {product name} -->
+                                        <div class="cart-item-title">
+                                            <a href="#">
+                                                <?php echo $showPro->title; ?>
+                                            </a>
+                                        </div>
+                                        <!-- PRice -->
+                                        <div class="cart-item-price">
+                                            <?php echo number_format($showPro->price); ?> تومان
+                                        </div>
+                                        <!-- Remove -->
+                                        <a href="index.php?c=basket&a=delete&id=<?php echo $value->id; ?>"
+                                           class="cart-remove">X</a>
+                                        <!-- Quanitity -->
+                                        <div class="cart-item-quantity">
 
-                        <!-- Thumb -->
-                        <div class="cart-item-thumb right">
-                            <img src="img/cart/1.jpg" alt="Cart product 1"/>
-                        </div>
-                        <!-- End thumb -->
-
-                        <!-- Content -->
-                        <div class="cart-item-content">
-                            <!-- {product name} -->
-                            <div class="cart-item-title">
-                                <a href="#">
-
-                                    لورم ایپسوم یا طرح‌نما</a>
-                            </div>
-                            <!-- PRice -->
-                            <div class="cart-item-price">
-                                $109.00
-                            </div>
-                            <!-- Remove -->
-                            <a href="#" class="cart-remove">X</a>
-                            <!-- Quanitity -->
-                            <div class="cart-item-quantity">
-
-                                تعداد: (1)
-                            </div>
+                                            تعداد: (<?php echo $showPro->count; ?>)
+                                        </div>
 
 
-                        </div>
-                        <!-- End Content -->
+                                    </div>
+                                    <!-- End Content -->
 
-                        <!-- Clearing -->
-                        <div class="clearing"></div>
+                                    <!-- Clearing -->
+                                    <div class="clearing"></div>
 
-                    </div>
-                    <!-- End item list -->
+                                </div>
+                                <!-- End item list -->
+
+
+                                <?php
+                                $total += $showPro->price;
+                            endforeach;
+                        endif;
+                    endif;
+                    ?>
+
 
                     <!-- Total -->
                     <div class="small-12 large-12 text-center medium-12 columns cart-total">
-
-                        مجموع: 124.00 $
-
+                        <?php if ($total != 0): ?>
+                            مجموع: <?php echo number_format($total); ?> تومان
+                        <?php else: ?>
+                            محصولی دری سبد خرید شما موجود نیست
+                        <?php endif; ?>
                     </div>
-                    <button class="small-12 large-12 btn btn-3 btn-3a icon-arrow-left">
+                    <a href="index.php?c=basket&a=list" class="small-12 large-12 btn btn-3 btn-3a icon-arrow-left">
                         سبد خرید
-                    </button>
+                    </a>
                     <button class="small-12 large-12 btn btn-3 btn-3a icon-lock">بررسی</button>
 
                 </div>
@@ -197,7 +196,8 @@
 
             <!-- Logo -->
             <div class="small-12 medium-3 large-2 small-centered large-uncentered text-center logo columns">
-                <a href="index.html" title="nexx Homepage"><img src="img/logo.png" alt="Nexx Store"/></a>
+                <a href="index.php" title="nexx Homepage"><img src="admin/public/img/default/logo.png"
+                                                               alt="Nexx Store"/></a>
             </div>
             <!-- End Logo -->
             <!-- Menu Icon For Mobile -->
