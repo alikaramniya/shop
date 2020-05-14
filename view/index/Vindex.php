@@ -106,291 +106,64 @@
 <!-- Product Listing -->
 <div class="row">
 
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
-        <!-- Sale Tag -->
-        <div class="sale-tag">
-            SALE
-        </div>
-        <!-- End Sale Tag -->
-        <img src="admin/public/img/default/product-list/1.jpg" alt="Product 1"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
 
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
+    <?php
+    if (!empty($listPro)):
+        foreach ($listPro as $value):
+            $catId = $value->cat_id;
+            $stateProCat = $pro->stateSubProCat($catId);
+            if ($stateProCat):
+                ?>
 
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
 
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
 
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered  f-product columns">
 
-        <img src="admin/public/img/default/product-list/2.jpg" alt="Product 1"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
 
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
+                <!-- Item -->
+                <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
+                    <img src="admin/<?php echo $value->img1; ?>" alt="Product 1"/>
+                    <!-- Product Link -->
+                    <div class="product-link text-center">
+                        <a href="#"><?php echo $value->title; ?></a>
+                    </div>
 
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
+                    <!-- Product Rating -->
+                    <div class="f-productrating">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                    </div>
+                    <!-- End Product Rating -->
 
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
+                    <!-- Product Price -->
+                    <div class="f-product-price">
+                        <?php echo number_format($value->price); ?>
+                    </div>
 
-        <img src="admin/public/img/default/product-list/3.jpg" alt="Product 3"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
+                    <!-- AddtoCart Buttons -->
+                    <div class="f-product-hover">
+                        <div class="f-button">
+                            <a href="index.php?c=basket&a=add&pro_id=<?php echo $value->id; ?>"><i class="icon-cart"></i></a>
+                            <a href="#"><i class="icon-heart"></i></a>
+                            <a href="#"><i class="icon-tags"></i></a>
+                        </div>
+                    </div>
+                    <!-- End AddtoCart Buttons -->
+                </div>
+                <!-- End item -->
 
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
 
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
 
-        <img src="admin/public/img/default/product-list/4.jpg" alt="Product 4"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
 
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
 
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
-        <!-- Sale Tag -->
-        <div class="sale-tag">
-            SALE
-        </div>
-        <!-- End Sale Tag -->
-        <img src="admin/public/img/default/product-list/5.jpg" alt="Product 5"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
 
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
-
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
-
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
-
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered  f-product columns">
-
-        <img src="admin/public/img/default/product-list/6.jpg" alt="Product 6"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
-
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
-
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
-
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
-
-        <img src="admin/public/img/default/product-list/3.jpg" alt="Product 3"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
-
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
-
-    <!-- Item -->
-    <div class="small-8 medium-3 small-centered medium-uncentered large-3 large-uncentered columns f-product">
-
-        <img src="admin/public/img/default/product-list/2.jpg" alt="Product 1"/>
-        <!-- Product Link -->
-        <div class="product-link text-center">
-            <a href="#">محصول بالا</a>
-        </div>
-        <!-- Product Rating -->
-        <div class="f-productrating">
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-            <i class="icon-star"></i>
-        </div>
-        <!-- End Product Rating -->
-        <!-- Product Price -->
-        <div class="f-product-price">
-            $50.90
-        </div>
-
-        <!-- AddtoCart Buttons -->
-        <div class="f-product-hover">
-            <div class="f-button">
-                <a href="#"><i class="icon-cart"></i></a>
-                <a href="#"><i class="icon-heart"></i></a>
-                <a href="#"><i class="icon-tags"></i></a>
-            </div>
-        </div>
-        <!-- End AddtoCart Buttons -->
-    </div>
-    <!-- End item -->
+            <?php
+            endif;
+        endforeach;
+    endif;
+    ?>
 
 
 </div>
