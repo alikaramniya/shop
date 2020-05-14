@@ -190,6 +190,19 @@ h4 {
 
 }
 
+.topHeader a {
+    background: #2b3d4f;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    margin-right: 10px;
+}
+
+.topHeader a:hover {
+    background: #f55151;
+
+}
+
 .currency a {
     width: 27px;
     height: 27px;
